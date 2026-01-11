@@ -84,7 +84,7 @@ The motors are configured as follows:
 
 ### Motor Control
 
-- All motors run at **50% speed** (127 out of 255) for safer operation
+- All motors run at **50% speed** (127 out of 255) by deafult for safer operation
 - The `setSpeed()` function accepts values from **0 to 255**:
   - `0` = Motor off (0% duty cycle)
   - `255` = Full speed (100% duty cycle)
@@ -100,7 +100,7 @@ The robot responds to the following single-character Bluetooth commands:
 | `B` | Backward | All motors rotate backward |
 | `L` | Left Turn | Tank turn left (left side backward, right side forward) |
 | `R` | Right Turn | Tank turn right (left side forward, right side backward) |
-| Any other | Stop | Motors stop and release |
+| "S" but also any other | Stop | Motors stop powering but do not brake |
 
 ### Tank-Style Turning
 
@@ -117,7 +117,7 @@ This creates a rotation in place, similar to how a tank turns.
 1. Power on your Arduino and wait for the HC-05 module to initialize
 2. On your phone/computer, search for Bluetooth devices
 3. Look for your HC-05 module (default name is usually "HC-05" or similar)
-4. Pair with the device (default PIN is often "1234" or "0000")
+4. Pair with the device (default PIN is "1234")
 5. Use a Bluetooth serial terminal app to connect and send commands
 
 ### Recommended Bluetooth Apps
@@ -129,7 +129,9 @@ This creates a rotation in place, similar to how a tank turns.
 
 ### Sending Commands
 
-1. Open your Bluetooth terminal app
+##note: this is for serial Bluetooth applications, NONE of the recommended apps use serial
+
+1. Open your Bluetooth app
 2. Connect to your HC-05 module
 3. Send single characters: `F`, `B`, `L`, `R`
 4. The robot will execute the command until a new command is received
@@ -215,6 +217,7 @@ This code is provided as-is for educational and personal use.
 5. **Verify motor shield compatibility** - ensure you're using Adafruit Motor Shield V1, not V2 and not the one for R4 arduino
 6. **Bluetooth connections don't work** - ensure you have the right RX and TX pins set in your code to initialize the HC-05 Bluetooth controller
 7. **Bluetooth connections don't work, still** - the HC-05 uses Serial Bluetooth, which isn't as fancy as newer Bluetooth connections - so ensure that whatever you're connecting from supports Serial Bluetooth
+8. **Motors run the wrong way** - DO NOT switch the polarity of the motor controller UNLESS you want to blow up the motor controller, you have to switch all eight motor wires instead 
 
 ---
 
