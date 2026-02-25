@@ -5,7 +5,7 @@ REM === CONFIG ===
 set WORKDIR=%USERPROFILE%\Downloads
 set PYTHON=python
 set FILE=pc_drive.py
-set URL=https://raw.githubusercontent.com/MasonCenterForRobotics/BananaBoat/main/pc_drive.py
+set URL=https://github.com/MasonCenterForRobotics/BananaBoat/blob/Robotic-Raptors/pc_drive.py
 
 REM === CHECK PYTHON ===
 where %PYTHON% >nul 2>nul
@@ -43,3 +43,4 @@ echo Starting robot control...
 %PYTHON% "%FILE%"
 
 pause
+
