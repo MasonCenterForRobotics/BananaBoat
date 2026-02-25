@@ -12,7 +12,8 @@ KEY_MAP = {
     's': 'B',
     'a': 'L',
     'd': 'R',
-    'e': 'E'
+    'e': 'E',
+    'q'; 'e'
 }
 
 STOP_COMMAND = 'S'
