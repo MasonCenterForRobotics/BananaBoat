@@ -1,4 +1,4 @@
-//first , you need to insstall the motor driver for L293D motor driver
+//first , you need to install the motor driver for L293D motor driver
 // Go to Sketch-> Include Librabry-> Manage Library-> Search for Adafruit Motor Shield V1
 // SoftwareSerial is included automatically with the Arduino IDE
 #include <AFMotor.h>
@@ -70,6 +70,8 @@ void loop() {
       right();
     } else if (command == 'L') {
       left();
+    } else if (command == 'E') {
+      powersprayer();
     } else {
       Serial.print("[Command] Unknown command: '");
       Serial.print(command);
